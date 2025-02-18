@@ -1,0 +1,22 @@
+[package]
+name = "wit-bindgen-markdown"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+homepage = 'https://github.com/bytecodealliance/wit-bindgen'
+description = """
+Markdown generator for WIT and the component model, typically used
+through the `wit-bindgen-cli` crate.
+"""
+
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+anyhow = { workspace = true }
+heck = { workspace = true }
+pulldown-cmark = { workspace = true }
+clap = { workspace = true, optional = true }
+wit-bindgen-core = { workspace = true }

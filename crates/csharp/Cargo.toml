@@ -1,0 +1,36 @@
+[package]
+name = "wit-bindgen-csharp"
+authors = ["Timmy Silesmo <silesmo@nor2.io>"]
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+homepage = 'https://github.com/bytecodealliance/wit-bindgen'
+description = """
+C# bindings generator for WIT and the component model, typically used
+through the `wit-bindgen-cli` crate.
+"""
+
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+wit-bindgen-core = { workspace = true }
+wit-component = { workspace = true }
+wit-parser = { workspace = true }
+wasm-metadata = { workspace = true }
+heck = { workspace = true }
+clap = { workspace = true, optional = true }
+anyhow = { workspace = true }
+indexmap = { workspace = true }
+
+[dev-dependencies]
+test-helpers = { path = '../test-helpers' }
+wasm-encoder = { workspace = true }
+wasmparser = { workspace = true }
+
+[features]
+default = ["aot"]
+aot = []
+mono = []
